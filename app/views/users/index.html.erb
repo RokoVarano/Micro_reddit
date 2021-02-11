@@ -1,0 +1,23 @@
+<h1>INDEXr</h1>
+
+<ul>
+<% if !@users.nil?%>
+<% @users.each do |user| %>
+<li>
+<%= user.name %>
+</li>
+<% end %>
+<% else %>
+<h4>USERS ES NULO</h4>
+<% end %>
+</ul> 
+
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
