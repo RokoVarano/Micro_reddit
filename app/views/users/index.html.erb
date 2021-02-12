@@ -10,14 +10,6 @@
 <% else %>
 <h4>USERS ES NULO</h4>
 <% end %>
-</ul> 
+</ul>
 
-<%= form_with model: @user do |form| %>
-  <div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </div>
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<h4><%= link_to "New User", new_user_path %></h4>
