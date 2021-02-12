@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def new
     @user = User.new
   end
@@ -11,7 +15,7 @@ class UsersController < ApplicationController
     params.permit!
     @user = User.new(params[:user])
     if @user.save
-      redirect_to users_path
+      redirect_to @user
     else
       render :new
     end

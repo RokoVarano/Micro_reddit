@@ -1,0 +1,15 @@
+<h1>Posts</h1>
+
+<ul>
+<% if !@posts.nil?%>
+<% @posts.each do |post| %>
+<li>
+<%= post.name %>
+</li>
+<% end %>
+<% else %>
+<h4>PoST ES NULO</h4>
+<% end %>
+</ul>
+
+<h4><%= link_to "New Post", new_post_path %></h4>
