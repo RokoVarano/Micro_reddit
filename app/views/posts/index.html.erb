@@ -1,10 +1,14 @@
-<h1>Posts</h1>
+<% if !@user.nil?%>
+<h1>User: <%=@user.name%></h1>
+<%else%>
+<h1>User:GUEST </h1>
+<% end %>
 
 <ul>
 <% if !@posts.nil?%>
 <% @posts.each do |post| %>
 <li>
-<%= post.name %>
+<%= post.title %>
 </li>
 <% end %>
 <% else %>
@@ -12,4 +16,17 @@
 <% end %>
 </ul>
 
-<h4><%= link_to "New Post", new_post_path %></h4>
+<h1>LOGIN/NEW</h1>
+
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% @user.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -2,10 +2,10 @@
 
 one:
   body: MyText
-  post: 
-  comment: 
+  user: one
+  post: one
 
 two:
   body: MyText
-  post: 
-  comment: 
+  user: two
+  post: two
