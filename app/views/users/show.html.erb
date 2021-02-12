@@ -4,7 +4,7 @@
 <% @user.posts.each do |post| %>
   <p>
     <strong>Title:</strong>
-    <%= post.title %>
+    <%= link_to post.title, post_path %>
   </p>
 
   <p>
